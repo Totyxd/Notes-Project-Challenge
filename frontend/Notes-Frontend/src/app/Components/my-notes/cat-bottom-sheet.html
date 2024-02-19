@@ -1,0 +1,9 @@
+<mat-nav-list>
+    <mat-list-item style="font-weight: bolder;">Add a Tag to your note!</mat-list-item>
+    <mat-list-item *ngFor="let category of categories" (click)="addCategory(category.id, data.noteId)">
+        <span>{{ category.name }}</span>
+        <button mat-raised-button color="warn" *ngIf="seekInNoteCats(category.id)"
+            (click)="removeCategory($event, category.id, data.noteId)"
+            style="margin-left: 20px; height: 30px;"><mat-icon>delete</mat-icon></button>
+    </mat-list-item>
+</mat-nav-list>

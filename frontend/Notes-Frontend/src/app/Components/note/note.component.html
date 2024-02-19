@@ -1,0 +1,16 @@
+<form class="note-form">
+    <div
+        style="display: flex; justify-content: space-between; margin-top: 25px; box-sizing: border-box; padding-left: 20px; padding-right: 20px;">
+        <button mat-button color="primary" (click)="goBack()"><mat-icon>arrow_back</mat-icon></button>
+        <button mat-fab color="accent" (click)="patchNote()"><mat-icon>done</mat-icon></button>
+    </div>
+    <div class="title-container full-width" style="background-color: #303030;">
+        <input value="{{note ? note.title : ''}}" class="title full-width" placeholder="Title..."
+            (input)="onTitleChange($event)" />
+    </div>
+
+    <div class="content-container full-width">
+        <textarea class="full-width content" placeholder="I had wonderful day..." value="{{note ? note.content : ''}}"
+            (input)="onContentChange($event)"></textarea>
+    </div>
+</form>

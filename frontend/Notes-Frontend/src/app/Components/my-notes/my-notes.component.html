@@ -1,0 +1,71 @@
+<div class="tab-container">
+    <mat-tab-group>
+        <mat-tab label="Active Notes">
+            <div>
+                <div style="display: flex; justify-content: space-between; margin: 20px 20px 20px 20px;">
+                    <button mat-raised-button color="primary"
+                        (click)="addVirtualNote()"><mat-icon>add</mat-icon></button>
+                    <button mat-raised-button color="warn" (click)="userService.logOut()">Log Out</button>
+                </div>
+
+                <div class="chips-container">
+                    <mat-chip-listbox aria-labelledby="category-group" class="radio-group">
+                        <mat-chip-option color="warn" (click)="getByUserId()">None</mat-chip-option>
+                        <mat-chip-option *ngFor="let category of categories" (click)="searchByCategory(category.id)">
+                            {{ category.name }}
+                        </mat-chip-option>
+                    </mat-chip-listbox>
+                </div>
+            </div>
+            <mat-list role="list" *ngFor="let note of notes">
+                <mat-list-item role="listitem" class="nota-entrada" (click)="toNestedResource(note.id)">
+                    <div>
+                        <h2>{{note.title}}</h2>
+                        <p>{{note.content ? note.content.slice(0, 25) + "..." : ""}}</p>
+                        <p>Last Modified: {{note.updatedAt}}</p>
+                    </div>
+                    <div style="position: absolute; right: 20px; bottom: 10px; font-size: large;">
+                        <mat-icon class="buttons-right" (click)="archive($event, note)">archive</mat-icon>
+                        <mat-icon class="buttons-right" (click)="delete($event, note.id)">delete</mat-icon>
+                        <mat-icon class="buttons-right"
+                            (click)="openBottomSheet($event, note.id, note.Categories)">tag</mat-icon>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </mat-tab>
+
+
+
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>inbox</mat-icon>
+            </ng-template>
+            <div>
+                <div class="chips-container">
+                    <mat-chip-listbox aria-labelledby="category-group" class="radio-group">
+                        <mat-chip-option color="warn" (click)="getByUserId(true)">None</mat-chip-option>
+                        <mat-chip-option *ngFor="let category of categories"
+                            (click)="searchByCategory(category.id, true)">
+                            {{ category.name }}
+                        </mat-chip-option>
+                    </mat-chip-listbox>
+                </div>
+            </div>
+            <mat-list role="list" *ngFor="let note of archivedNotes">
+                <mat-list-item role="listitem" class="nota-entrada" (click)="toNestedResource(note.id)">
+                    <div>
+                        <h2>{{note.title}}</h2>
+                        <p>{{note.content ? note.content.slice(0, 25) + "..." : ""}}</p>
+                        <p>Last Modified: {{note.updatedAt}}</p>
+                    </div>
+                    <div style="position: absolute; right: 20px; bottom: 10px; font-size: large;">
+                        <mat-icon class="buttons-right" (click)="unarchive($event, note)">unarchive</mat-icon>
+                        <mat-icon class="buttons-right" (click)="delete($event, note.id)">delete</mat-icon>
+                        <mat-icon class="buttons-right"
+                            (click)="openBottomSheet($event, note.id, note.Categories)">tag</mat-icon>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </mat-tab>
+    </mat-tab-group>
+</div>

@@ -1,0 +1,33 @@
+<div class="background">
+    <div class="app-title">
+        <span>My Notes</span>
+    </div>
+    <div class="login-container">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Log In</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Username</mat-label>
+                        <input matInput [(ngModel)]="username" required />
+                        <mat-error *ngIf="username === ''">Username is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" [(ngModel)]="password" required />
+                        <mat-error *ngIf="password === ''">Password is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <mat-error *ngIf="loginError">Incorrect usernmae or password</mat-error>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="login()">Log In</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+.background {
+    background: linear-gradient(to bottom right, #8e44ad, #1f2c38);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.app-title {
+    color: #FDFEFF;
+    font-size: 50px;
+    position: absolute;
+    top: 120px;
+}
+
+.login-container {
+    width: 60%;
+}
+
+mat-card {
+    padding: 20px;
+}
+
+mat-card-title {
+    color: #FDFEFF;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+}

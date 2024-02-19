@@ -1,0 +1,51 @@
+:root {
+    --color-basic: #303030;
+    --color-primary: #9c27b0;
+    --color-font: #c6c6c6;
+}
+
+.note-form {
+    background-color: #303030;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #c6c6c6;
+}
+
+.full-width {
+    width: 99%;
+    background-color: #303030;
+    border: none;
+}
+
+.full-width:focus {
+    outline: none;
+}
+
+.content {
+    font-size: xx-large;
+    color: #c6c6c6;
+    resize: none;
+    height: 99%;
+}
+
+.title {
+    font-size: xx-large;
+    color: #c6c6c6;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.title-container {
+    height: 10%;
+    margin-top: 40px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.content-container {
+    height: 90%;
+    padding-left: 20px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}

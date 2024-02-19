@@ -1,0 +1,60 @@
+:root {
+    --color-basic: #303030;
+    --color-primary: #9c27b0;
+    --color-font: #c6c6c6;
+}
+
+.tab-container {
+    background-color: #303030;
+    height: 100vh;
+}
+
+mat-tab {
+    display: flex;
+    justify-content: center;
+}
+
+
+.nota-entrada {
+    background-color: #bb18d8;
+    min-height: 125px;
+    width: 95%;
+    margin-left: 40px;
+    border-radius: 10px;
+}
+
+.nota-entrada:hover {
+    background-color: #7b088f;
+}
+
+mat-tab-group {
+    background-color: #303030;
+    color: #c6c6c6;
+}
+
+.radio-group {
+    margin: 15px 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.chips-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio-button {
+    margin: 5px;
+}
+
+.add-button {
+    margin-top: 20px;
+}
+
+.buttons-right {
+    padding: 5px;
+}
+
+.buttons-right:hover {
+    color: #303030;
+}
